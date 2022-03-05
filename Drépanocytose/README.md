@@ -50,6 +50,6 @@ git clone https://github.com/InterxPim/Models.git
 pip install -r requirements.txt
 ```
 
-A quick and easy walkthrough to monitor adhered sRBC on large whole microchannels, functionalized with laminin can be illustrated here: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/gist/Mohamed-Aziz-Mhadhbi/385834a310f006e9e0424dd4c5ff0aa7/main_drepanocytose.ipynb)
+A quick and easy walkthrough to monitor adhered sRBC on large whole microchannels, functionalized with laminin can be illustrated here: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mohamed-Aziz-Mhadhbi/Drepanocytose/blob/main/Main_Drepanocytose.ipynb)
 
 
