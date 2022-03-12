@@ -161,3 +161,31 @@ l2 = ax2.legend(loc="best")
 #Save the model
 model.save('malaria_cnn.h5')
 
+################################################
+### ANOTHER WAY TO DEFINE THE NETWORK using Sequential model
+#Sequential 
+#You can create a Sequential model by passing a list of layer instances to the constructor:
+"""
+from keras.layers import Convolution2D, MaxPooling2D, Flatten, Dense, BatchNormalization, Dropout
+from keras.models import Sequential
+model = None
+model = Sequential()
+model.add(Convolution2D(32, (3, 3), input_shape = (SIZE, SIZE, 3), activation = 'relu', data_format='channels_last'))
+model.add(MaxPooling2D(pool_size = (2, 2), data_format="channels_last"))
+model.add(BatchNormalization(axis = -1))
+model.add(Dropout(0.2))
+model.add(Convolution2D(32, (3, 3), activation = 'relu'))
+model.add(MaxPooling2D(pool_size = (2, 2), data_format="channels_last"))
+model.add(BatchNormalization(axis = -1))
+model.add(Dropout(0.2))
+model.add(Flatten())
+model.add(Dense(activation = 'relu', units=512))
+model.add(BatchNormalization(axis = -1))
+model.add(Dropout(0.2))
+model.add(Dense(activation = 'relu', units=256))
+model.add(BatchNormalization(axis = -1))
+model.add(Dropout(0.2))
+model.add(Dense(activation = 'sigmoid', units=2))
+model.compile(optimizer = 'adam', loss = 'categorical_crossentropy', metrics = ['accuracy'])
+print(model.summary())
+"""
