@@ -27,3 +27,6 @@ image_directory = 'cell_images/'
 SIZE = 64
 dataset = []  #Many ways to handle data, you can use pandas. Here, we are using a list format.  
 label = []  #Place holders to define add labels. We will add 0 to all parasitized images and 1 to uninfected.
+
+
+parasitized_images = os.listdir(image_directory + 'Parasitized/')
