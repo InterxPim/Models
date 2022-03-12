@@ -90,3 +90,38 @@ print(model.summary())
     
     
 ###############################################################    
+
+### Split the dataset
+# 
+# I split the dataset into training and testing dataset.
+# 1. Training data: 80%
+# 2. Testing data: 20%
+from sklearn.model_selection import train_test_split
+from keras.utils import to_categorical
+
+X_train, X_test, y_train, y_test = train_test_split(dataset, to_categorical(np.array(label)), test_size = 0.20, random_state = 0)
+
+# When training with Keras's Model.fit(), adding the tf.keras.callback.TensorBoard callback 
+# ensures that logs are created and stored. Additionally, enable histogram computation 
+#every epoch with histogram_freq=1 (this is off by default)
+#Place the logs in a timestamped subdirectory to allow easy selection of different training runs.
+
+#import datetime
+
+#log_dir="logs/fit/" + datetime.datetime.now().strftime("%Y%m%d_%H%M%S") + "/"
+#tensorboard_callback = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
+
+
+# ### Training the model
+# As the training data is now ready, I will use it to train the model.   
+
+#Fit the model
+history = model.fit(np.array(X_train), 
+                         y_train, 
+                         batch_size = 64, 
+                         verbose = 1, 
+                         epochs = 5,      #Changed to 3 from 50 for testing purposes.
+                         validation_split = 0.1,
+                         shuffle = False
+                      #   callbacks=callbacks
+                     )
