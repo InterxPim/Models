@@ -15,3 +15,6 @@ import os
 import cv2
 from PIL import Image
 import keras
+
+os.environ['KERAS_BACKEND'] = 'tensorflow' # Added to set the backend as Tensorflow
+#We can also set it to Theano if we want. 
