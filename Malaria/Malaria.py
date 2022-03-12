@@ -38,3 +38,6 @@ for i, image_name in enumerate(parasitized_images):
         image = image.resize((SIZE, SIZE))
         dataset.append(np.array(image))
         label.append(0)
+
+#Iterate through all images in Uninfected folder, resize to 64 x 64
+#Then save into the same numpy array 'dataset' but with label 1
