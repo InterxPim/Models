@@ -18,3 +18,7 @@ import keras
 
 os.environ['KERAS_BACKEND'] = 'tensorflow' # Added to set the backend as Tensorflow
 #We can also set it to Theano if we want. 
+
+#Iterate through all images in Parasitized folder, resize to 64 x 64
+#Then save as numpy array with name 'dataset'
+#Set the label to this as 0
