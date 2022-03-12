@@ -31,3 +31,10 @@ label = []  #Place holders to define add labels. We will add 0 to all parasitize
 
 parasitized_images = os.listdir(image_directory + 'Parasitized/')
 for i, image_name in enumerate(parasitized_images):
+    
+    if (image_name.split('.')[1] == 'png'):
+        image = cv2.imread(image_directory + 'Parasitized/' + image_name)
+        image = Image.fromarray(image, 'RGB')
+        image = image.resize((SIZE, SIZE))
+        dataset.append(np.array(image))
+        label.append(0)
