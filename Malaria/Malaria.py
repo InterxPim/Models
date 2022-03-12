@@ -41,3 +41,12 @@ for i, image_name in enumerate(parasitized_images):
 
 #Iterate through all images in Uninfected folder, resize to 64 x 64
 #Then save into the same numpy array 'dataset' but with label 1
+
+uninfected_images = os.listdir(image_directory + 'Uninfected/')
+for i, image_name in enumerate(uninfected_images):
+    if (image_name.split('.')[1] == 'png'):
+        image = cv2.imread(image_directory + 'Uninfected/' + image_name)
+        image = Image.fromarray(image, 'RGB')
+        image = image.resize((SIZE, SIZE))
+        dataset.append(np.array(image))
+        label.append(1)
