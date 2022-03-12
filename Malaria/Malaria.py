@@ -50,3 +50,5 @@ for i, image_name in enumerate(uninfected_images):
         image = image.resize((SIZE, SIZE))
         dataset.append(np.array(image))
         label.append(1)
+#Apply CNN
+# ### Build the model
