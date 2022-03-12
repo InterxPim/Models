@@ -30,3 +30,4 @@ label = []  #Place holders to define add labels. We will add 0 to all parasitize
 
 
 parasitized_images = os.listdir(image_directory + 'Parasitized/')
+for i, image_name in enumerate(parasitized_images):
